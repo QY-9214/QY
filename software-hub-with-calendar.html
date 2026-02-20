@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Hub with Calendar</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .clock { font-size: 24px; margin: 20px; }
+        .calendar { width: 100%; border-collapse: collapse; }
+        .calendar th, .calendar td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        .calendar th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>Software Integration Hub</h1>
+    <div class="clock" id="clock">Current Time: </div>
+    <table class="calendar">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Solar Terms</th>
+            </tr>
+        </thead>
+        <tbody id="solarTerms">
+            <tr><td>2026-02-04</td><td>Lichun (Beginning of Spring)</td></tr>
+            <tr><td>2026-02-19</td><td>Yuchun (Rain Water)</td></tr>
+            <tr><td>2026-03-06</td><td>Jingzhe (Awakening of Insects)</td></tr>
+            <tr><td>2026-03-21</td><td>Chunfen (Spring Equinox)</td></tr>
+            <tr><td>2026-04-05</td><td>Qingming (Clear and Bright)</td></tr>
+            <tr><td>2026-04-20</td><td>Gujin (Grain Rain)</td></tr>
+            <tr><td>2026-05-05</td><td>Liuxia (Beginning of Summer)</td></tr>
+            <tr><td>2026-05-21</td><td>Xiaoman (Grain Full)</td></tr>
+            <tr><td>2026-06-05</td><td>Mangzhong (Grain in Ear)</td></tr>
+            <tr><td>2026-06-21</td><td>Xiazhi (Summer Solstice)</td></tr>
+            <tr><td>2026-07-07</td><td>Shuangshu (Minor Heat)</td></tr>
+            <tr><td>2026-07-22</td><td>Dazhuh (Major Heat)</td></tr>
+            <tr><td>2026-08-07</td><td>Liqiu (Beginning of Autumn)</td></tr>
+            <tr><td>2026-08-23</td><td>Chushu (End of Heat)</td></tr>
+            <tr><td>2026-09-07</td><td>Baizhong (White Dew)</td></tr>
+            <tr><td>2026-09-22</td><td>Qiu Fen (Autumn Equinox)</td></tr>
+            <tr><td>2026-10-08</td><td>Shuangjiang (Cold Dew)</td></tr>
+            <tr><td>2026-10-23</td><td>Frost (First Frost)</td></tr>
+            <tr><td>2026-11-07</td><td>Lidong (Beginning of Winter)</td></tr>
+            <tr><td>2026-11-22</td><td>Xiaoxue (Minor Snow)</td></tr>
+            <tr><td>2026-12-07</td><td>Dashu (Winter Solstice)</td></tr>
+            <tr><td>2026-12-21</td><td>Xiaohan (Minor Cold)</td></tr>
+        </tbody>
+    </table>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById('clock').textContent = 'Current Time: ' + now.toISOString().slice(0, 19).replace('T', ' ');
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
