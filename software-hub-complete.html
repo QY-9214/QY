@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Hub</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .collapsible { cursor: pointer; border: none; color: white; text-align: left; outline: none; font-size: 15px; }
+        .active, .collapsible:hover { background-color: #555; }
+        .content { padding: 0 18px; display: none; overflow: hidden; background-color: #f1f1f1; }
+        #clock { font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Software Management Hub</h1>
+    <p>Open files with the following tools:</p>
+    <ul>
+        <li><button onclick="openExcel()">Open Excel</button></li>
+        <li><button onclick="openWord()">Open Word</button></li>
+        <li><button onclick="openVisio()">Open Visio</button></li>
+        <li><button onclick="openPDF()">Open PDF</button></li>
+    </ul>
+
+    <h2>Collapsible Calendar</h2>
+    <button class="collapsible">Calendar</button>
+    <div class="content">
+        <p>Lunar Dates and 24 Solar Terms Display</p>
+    </div>
+
+    <h2>Current Time</h2>
+    <div id="clock"></div>
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            document.getElementById('clock').innerHTML = now.toUTCString();
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        document.querySelector('.collapsible').addEventListener('click', function() {
+            this.classList.toggle('active');
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+
+        function openExcel() { alert('Opening Excel...'); }
+        function openWord() { alert('Opening Word...'); }
+        function openVisio() { alert('Opening Visio...'); }
+        function openPDF() { alert('Opening PDF...'); }
+    </script>
+
+    <footer>
+        <h3>Data Backup Options</h3>
+        <p>You can backup your data securely.</p>
+    </footer>
+</body>
+</html>
