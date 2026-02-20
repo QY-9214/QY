@@ -1,1 +1,42 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Software Integration Hub</title>\n    <style>\n        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }\n        #calendar { margin-top: 20px; }\n        #clock { font-size: 24px; margin-top: 20px; }\n    </style>\n    <script>\n        function updateClock() {\n            const now = new Date();\n            document.getElementById('clock').innerText = now.toUTCString();\n        }\n        setInterval(updateClock, 1000);\n        function showSolarTerms() {\n            const terms = ['Start of Spring', 'Rain Water', 'Insects Awaken', 'Spring Equinox', 'Clear and Bright', 'Grain Rain', 'Start of Summer', 'Grain Full', 'Start of Heat', 'Heat End', 'Start of Autumn', 'White Dew', 'Autumn Equinox', 'Cold Dew', 'Start of Winter', 'Light Snow', 'Heavy Snow', 'Winter Solstice', 'Minor Cold', 'Major Cold'];\n            const calendar = document.getElementById('calendar');\n            terms.forEach(term => {\n                const li = document.createElement('li');\n                li.textContent = term;\n                calendar.appendChild(li);\n            });\n        }\n        window.onload = showSolarTerms;\n    </script>\n</head>\n<body>\n    <h1>Software Integration Hub</h1>\n    <div id="clock"></div>\n    <h2>Chinese 24 Solar Terms</h2>\n    <ul id="calendar"></ul>\n    <h2>Calculator</h2>\n    <input type="text" id="calcInput" placeholder="Enter calculation">\n    <button onclick="alert(eval(document.getElementById('calcInput').value))">Calculate</button>\n    <h2>Timer</h2>\n    <input type="number" id="timerInput" placeholder="seconds">\n    <button onclick="setTimeout(() => alert('Time is up!'), document.getElementById('timerInput').value * 1000)">Start Timer</button>\n    <h2>Todo List</h2>\n    <input type="text" id="todoInput" placeholder="Add new todo">\n    <button onclick="const li = document.createElement('li'); li.textContent = document.getElementById('todoInput').value; document.getElementById('todoList').appendChild(li);">Add Todo</button>\n    <ul id="todoList"></ul>\n    <h2>QR Code Generator</h2>\n    <input type="text" id="qrInput" placeholder="Enter text for QR code">\n    <button onclick="generateQRCode(document.getElementById('qrInput').value)">Generate QR</button>\n    <div id="qrCode"></div>\n    <h2>Color Picker</h2>\n    <input type="color" id="colorPicker" onchange="document.body.style.backgroundColor = this.value">\n    <h2>Notes</h2>\n    <textarea id="notes" rows="4" cols="50"></textarea>\n</body>\n</html>\n
+<html>
+<head>
+    <title>Software Hub Enhanced</title>
+</head>
+<body>
+    <h1>Software Management Features</h1>
+    <ul>
+        <li>Feature 1: Description of feature 1</li>
+        <li>Feature 2: Description of feature 2</li>
+        <li>Feature 3: Description of feature 3</li>
+    </ul>
+    <h1>Real-Time Clock</h1>
+    <div id="clock"></div>
+    <script>
+        setInterval(() => {
+            const now = new Date();
+            document.getElementById('clock').innerText = now.toUTCString();
+        }, 1000);
+    </script>
+    <h1>Lunar Calendar</h1>
+    <div id="lunar-calendar">[Lunar Calendar Data Here]</div>
+    <h1>24 Solar Terms</h1>
+    <ul>
+        <li>Term 1: Description</li>
+        <li>Term 2: Description</li>
+        <li>Term 3: Description</li>
+    </ul>
+    <h1>Web Tools</h1>
+    <h2>Calculator</h2>
+    <div>Calculator Tool Here</div>
+    <h2>Timer</h2>
+    <div>Timer Tool Here</div>
+    <h2>Todo List</h2>
+    <div>Todo List Tool Here</div>
+    <h2>QR Code Generator</h2>
+    <div>QR Code Tool Here</div>
+    <h2>Color Picker</h2>
+    <div>Color Picker Tool Here</div>
+    <h2>Notes</h2>
+    <div>Notes Tool Here</div>
+</body>
+</html>
